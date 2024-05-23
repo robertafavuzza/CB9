@@ -1,0 +1,26 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background-color: aliceblue;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.051);
+  border-radius: 4px;
+  overflow: hidden;
+  gap: 8px;
+  width: max-content;
+}
+
+.product-card__title,
+p {
+  margin: 0;
+}
+
+.product-card__img {
+  width: 150px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.product-card__title {
+  font-size: 1rem;
+  width: 150px;
+}
