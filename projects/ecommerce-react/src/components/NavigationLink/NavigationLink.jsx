@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
 // props sta per properties
 
-const NavigationLink = ({ href, text }) => {
+const NavigationLink = ({ handleClick, href, text }) => {
   return (
-    <li className="navigation--link">
+    <li onClick={handleClick} className="navigation--link">
       <a href={href}>{text}</a>
     </li>
-  );
-};
+  )
+}
 
-export default NavigationLink;
+export default NavigationLink

@@ -1,0 +1,18 @@
+.input-task {
+    border: none;
+    outline: none;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: rgb(240, 240, 240);
+  }
+  
+  .button-task {
+    background-color: cadetblue;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+  }
+  
+  .button-task:hover {
+    background-color: rgb(126, 193, 196);
+  }
