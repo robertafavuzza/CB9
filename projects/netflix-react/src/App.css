@@ -1,0 +1,4 @@
+.movie-list {
+    display: flex;
+    gap: 12px;
+}

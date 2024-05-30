@@ -1,0 +1,30 @@
+.movie-card {
+    box-sizing: border-box;
+    width: 200px;
+    margin: 0;
+    padding: 0;
+}
+
+.card-image {
+    height: 100px;
+    width: 200px;
+    object-fit: cover;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.categories {
+    display: flex;
+    justify-content: space-evenly;
+}

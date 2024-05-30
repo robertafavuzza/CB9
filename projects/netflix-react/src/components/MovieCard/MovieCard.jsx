@@ -1,24 +1,44 @@
+/* eslint-disable react/prop-types */
+import './MovieCard.css'
+import { useState } from 'react'
+
 const MovieCard = ({
-  handleHover,
   image,
   match,
   rating,
-  duration,
+  releaseDate,
   isHD,
-  categories,
-  isActive = false,
+  categories = [],
 }) => {
+  const [isActive, setIsActive] = useState(false)
+
+  const handleMouse = () => {
+    setIsActive(!isActive)
+  }
+
   return (
-    <article onMouseOver={handleHover} className="movie-card">
-      <img src={image} alt={''} />
-      {isActive ? (
-        <div>
-          <section className="actions"></section>
-          <section className="info"></section>
-          <section className="categories"></section>
+    <div
+      onMouseEnter={handleMouse}
+      onMouseLeave={handleMouse}
+      className="movie-card"
+    >
+      <img src={image} alt={''} className="card-image" />
+      {/* conditional rendering */}
+      {isActive && (
+        <div className="card-info">
+          <section className="info">
+            <p>{match}</p>
+            <p>{rating}</p>
+            <p>{releaseDate}</p>
+          </section>
+          <section className="categories">
+            {categories.map((category, index) => (
+              <p key={index}>{category}</p>
+            ))}
+          </section>
         </div>
-      ) : null}
-    </article>
+      )}
+    </div>
   )
 }
 
