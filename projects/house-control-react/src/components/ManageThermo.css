@@ -1,0 +1,80 @@
+.manage-thermo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 90vh;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color: #fff;
+}
+
+.thermostat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+  margin-bottom: 10px;
+}
+
+.thermostat-switch {
+  transform: scale(1.2);
+}
+
+.circular-slider-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.temperature-display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  color: #fff;
+}
+
+.mode-buttons {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: -20px;
+}
+
+.mode-button {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  flex: 1;
+  margin: 0 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s;
+}
+
+.mode-button.active,
+.mode-button:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.mode-button span {
+  display: block;
+  margin-top: 10px;
+}
+
+.mode-button .ant-switch {
+  margin-top: 10px;
+  transform: scale(1.2);
+}

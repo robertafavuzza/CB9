@@ -1,0 +1,52 @@
+.manage-lamp-container {
+    padding: 20px;
+    color: #fff;
+  }
+  
+  .lamp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .color-picker-wrapper {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .color-picker-wrapper .react-circular-slider {
+    margin: 0 auto;
+  }
+  
+  .intensity-slider {
+    margin-top: 20px;
+  }
+  
+  .intensity-slider label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .intensity-slider input {
+    width: 100%;
+  }
+  
+  .mode-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .mode-button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .mode-button.active {
+    background-color: #ff00ff;
+    color: #fff;
+  }
+  

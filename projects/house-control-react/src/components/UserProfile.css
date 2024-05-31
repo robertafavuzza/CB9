@@ -1,0 +1,26 @@
+.card-container {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 10px;
+  width: 120px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-container h3 {
+  margin: 10px 0;
+}
+
+.card-container button {
+  background: linear-gradient(135deg, #ff00ff, #ff6ec4);
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.card-container button:hover {
+  opacity: 0.9;
+}

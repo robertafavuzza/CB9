@@ -10,26 +10,23 @@ const baseUrl = 'https://api.themoviedb.org/3';
 
 let currentPage = 1;
 
-// funzione per recuperare film dal server utilizzando la fetch
-export const fetchMovies = (endpoint, page = currentPage) => {
+// funzione asincrona per recuperare film dal server utilizzando la fetch
+export const fetchMovies = async (endpoint, page = currentPage) => {           //async...await
     console.log(`Recupero dei film dall'endpoint: ${endpoint} alla pagina: ${page}`);
     const url = `${baseUrl}/${endpoint}?api_key=${apiKey}&page=${page}`;
 
-    return fetch(url, {
-        headers: { 'Authorization': `Bearer ${apiToken}` }
-    })
-    .then(response => {
+    try {   //try...catch per controllare errori
+        const response = await fetch(url, {
+            headers: { 'Authorization': `Bearer ${apiToken}` }
+        });
         if (!response.ok) throw new Error('La risposta del network non è andata a buon fine');
-        return response.json();
-    })
-    .then(data => {
-        console.log(data); 
+        const data = await response.json();
+        console.log(data);
         return data;
-    })
-    .catch(error => {
+    } catch (error) {
         console.error('Errore nel recupero dei dati:', error);
         return null;
-    });
+    }
 };
 
 // funzione per creare la lista dei film

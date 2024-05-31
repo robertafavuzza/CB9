@@ -2,3 +2,22 @@
     list-style: none;
     font-size: 1.2rem;
   }
+
+  .close-button {
+    background-color: red;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 10px;
+    margin-left: auto;
+    align-self: auto;
+    margin-left: 10px;
+    border-radius: 80px;
+  }

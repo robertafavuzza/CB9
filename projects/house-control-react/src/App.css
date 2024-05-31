@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #6e00ff, #9f00ff);
+  color: #ffffff;
+  height: 100vh;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background: rgba(51, 51, 51, 0.8);
+  padding: 10px 0;
+  border-top: 1px solid #ffffff;
+}
+
+.nav-item {
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.nav-item.active {
+  color: #ff00ff;
+}

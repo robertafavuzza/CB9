@@ -20,7 +20,7 @@ const AddTask = ({ setTasks = () => {}, tasks = [] }) => {
         placeholder="Inserisci la tua task"
         onChange={(e) => {
           // aggiorno lo state all'inserimento di ogni carattere
-          setInputValue(e.target.value);
+          setInputValue([e.target.value]);
         }}
       />
       <button
@@ -28,7 +28,7 @@ const AddTask = ({ setTasks = () => {}, tasks = [] }) => {
         type="button"
         onClick={() => {
             // aggiorno la to do list con il nuovo valore inserito nel campo input
-            setTasks([...tasks, inputValue])
+            setTasks({id: 0, text: e.target.value})
         //   setTasks(prev => [...prev, inputValue]);
         }}
       >

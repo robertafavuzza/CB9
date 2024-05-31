@@ -1,0 +1,24 @@
+/* PRODUCT */
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 6px;
+  text-align: center;
+  max-width: 200px;
+}
+
+.product--image {
+  width: 100%;
+  height: auto;
+}
+
+.product--title {
+  font-size: 16px;
+  font-weight: normal;
+  margin-top: 18px;
+}
+
+.product--price {
+  margin-top: 18px;
+}

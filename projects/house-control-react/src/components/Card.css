@@ -1,0 +1,48 @@
+.card-container {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 10px;
+  width: 150px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.card-container:hover {
+  transform: scale(1.05);
+}
+
+.icon-container {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.card-container h3 {
+  margin: 10px 0;
+}
+
+.card-container p {
+  margin: 5px 0;
+}
+
+.status-on, .status-unlocked {
+  color: lightgreen;
+}
+
+.status-off, .status-locked {
+  color: red;
+}
+
+.card-container button {
+  background: linear-gradient(135deg, #ff00ff, #ff6ec4);
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.card-container button:hover {
+  opacity: 0.9;
+}

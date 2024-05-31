@@ -1,0 +1,55 @@
+/* NAV */
+.site--bar {
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: space-between;
+  padding: 22px 32px;
+  position: absolute;
+  width: 100vw;
+  align-items: center;
+}
+
+.navigation-links {
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+}
+
+/* MAIN */
+.site--claim {
+  background-image: url('https://picsum.photos/2000/1000'); /* URL di Lorem Picsum */
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  font-size: 90px;
+  padding: 240px;
+  text-align: center;
+}
+
+/* PRODUCTS */
+.products {
+  padding: 50px 100px;
+}
+
+.products--title {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.products--list {
+  display: grid;
+  grid-template-columns: repeat(4, 357px);
+  column-gap: 10px;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  row-gap: 100px;
+  margin-top: 130px;
+}
+
+/* FOOTER */
+.more {
+  background: #bdbdbd;
+  padding: 50px 100px;
+}
