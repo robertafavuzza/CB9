@@ -1,4 +1,26 @@
 .task {
     list-style: none;
     font-size: 1.2rem;
+    display: flex;
+  }
+
+  .close-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(160, 61, 61);
+    color: white;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    cursor: pointer;
+  }
+
+  .close-button:hover {
+    background-color: rgb(216, 63, 63);
+  }
+
+  .close-button:active {
+    background-color: rgb(100, 54, 54);
   }

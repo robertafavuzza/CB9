@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import { nanoid } from 'nanoid'
 import "./AddTask.css";
 
 /**
@@ -13,28 +14,26 @@ const AddTask = ({ setTasks = () => {}, tasks = [] }) => {
   const [inputValue, setInputValue] = useState("");
 
   return (
-    <div>
+    <form type="submit">
       <input
         className="input-task"
         type="text"
         placeholder="Inserisci la tua task"
         onChange={(e) => {
-          // aggiorno lo state all'inserimento di ogni carattere
           setInputValue(e.target.value);
         }}
       />
       <button
         className="button-task"
-        type="button"
-        onClick={() => {
-            // aggiorno la to do list con il nuovo valore inserito nel campo input
-            setTasks([...tasks, inputValue])
-        //   setTasks(prev => [...prev, inputValue]);
+        type="submit"
+        onClick={(e) => {
+          e.preventDefault();
+            setTasks([...tasks, { id: nanoid(), text: inputValue }])
         }}
       >
         Insert
       </button>
-    </div>
+    </form>
   );
 };
 
