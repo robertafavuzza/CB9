@@ -1,0 +1,38 @@
+.todo-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  
+  .todo-form input {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    width: 70%;
+    margin-right: 0.5rem;
+  }
+  
+  .todo-form button {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    border: none;
+    background-color: #e2e601;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .todo-form button:hover {
+    background-color: #fbff00;
+  }
+  
+  @media (min-width: 768px) {
+    .todo-form {
+      margin-top: 2rem;
+    }
+  
+    .todo-form input {
+      width: 80%;
+    }
+  }
