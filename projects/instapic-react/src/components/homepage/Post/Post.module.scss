@@ -1,0 +1,57 @@
+@import 'src/assets/styles/variables';
+@import 'src/assets/styles/mixins';
+
+.post {
+  background-color: $background-color;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+
+  .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+    img {
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .username {
+      font-weight: bold;
+    }
+  }
+
+  .imageWrapper {
+    margin: 10px 0;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .icons {
+      display: flex;
+      gap: 10px;
+
+      .icon {
+        cursor: pointer;
+        font-size: 1.5rem;
+      }
+    }
+
+    .likes {
+      font-weight: bold;
+    }
+  }
+}

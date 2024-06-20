@@ -1,0 +1,34 @@
+@use '../../assets/mixins';
+
+.movieCard {
+  @include mixins.card-dimension();
+  flex: 0 0 auto;
+  position: relative;
+  overflow: hidden;
+  scroll-snap-align: center;
+  cursor: pointer;
+  transition: all 0.25s;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  p {
+    height: 30%;
+    width: 100%;
+    padding: 0 12px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    font-size: 1.3rem;
+    color: whitesmoke;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.569);
+  }
+}

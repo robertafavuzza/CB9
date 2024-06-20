@@ -1,96 +1,66 @@
-import { useState, useEffect } from 'react'
-import './App.css'
-import Navigation from './components/Navigation/Navigation'
-import MovieList from './components/MovieList/MovieList'
-import { AUTH_KEY } from './constants'
-import MovieDetail from './components/MovieDetail/MovieDetail'
-
-const items = [
-  {
-    id: 0,
-    text: 'Home',
-    href: '/#',
-  },
-  {
-    id: 1,
-    text: 'TV Shows',
-    href: '/#',
-  },
-  {
-    id: 2,
-    text: 'Movies',
-    href: '/#',
-  },
-  {
-    id: 3,
-    text: 'New & Popular',
-    href: '/#',
-  },
-]
-
-const BASE_URL = 'https://api.themoviedb.org/3/movie/'
+import { useEffect, useState } from "react";
+import styles from "./app.module.scss";
+import HeroComponent from "./components/HeroComponent/HeroComponent";
+import Carousel from "./components/Carousel/Carousel";
 
 function App() {
-  const [popularList, setPopularList] = useState([])
-  const [topRatedList, setTopRatedList] = useState([])
-  const [movieDetail, setMovieDetail] = useState(null)
+  const [popularList, setPopularList] = useState([]);
+  const [topRatedList, setTopRatedList] = useState([]);
 
   useEffect(() => {
-    fetch(`${BASE_URL}popular`, {
-      headers: {
-        accept: 'application/json',
-        Authorization: `Bearer ${AUTH_KEY}`,
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => setPopularList(data.results))
+    console.log("VITE_TMDB_API_KEY:", import.meta.env.VITE_TMDB_API_KEY);
+    console.log("VITE_TMDB_API_URL:", import.meta.env.VITE_TMDB_API_URL);
 
-    fetch(`${BASE_URL}top_rated`, {
-      headers: {
-        accept: 'application/json',
-        Authorization: `Bearer ${AUTH_KEY}`,
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => setTopRatedList(data.results))
+    const fetchPopularMovies = async () => {
+      try {
+        const response = await fetch(
+          `${import.meta.env.VITE_TMDB_API_URL}/movie/popular?api_key=${import.meta.env.VITE_TMDB_API_KEY}`
+        );
+        console.log('Popular Movies Response:', response);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        setPopularList(data.results.filter((_, index) => index < 8));
+      } catch (error) {
+        console.error("Error fetching popular movies:", error);
+      }
+    };
 
-    fetch(`${BASE_URL}429`, {
-      headers: {
-        accept: 'application/json',
-        Authorization: `Bearer ${AUTH_KEY}`,
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => setMovieDetail(data))
-  }, [])
+    const fetchTopRatedMovies = async () => {
+      try {
+        const response = await fetch(
+          `${import.meta.env.VITE_TMDB_API_URL}/movie/top_rated?api_key=${import.meta.env.VITE_TMDB_API_KEY}`
+        );
+        console.log('Top Rated Movies Response:', response);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        setTopRatedList(data.results.filter((_, index) => index < 8));
+      } catch (error) {
+        console.error("Error fetching top-rated movies:", error);
+      }
+    };
+
+    fetchPopularMovies();
+    fetchTopRatedMovies();
+  }, []);
 
   return (
-    <div>
-      {/* <Navigation items={items} />
-      <MovieList movieList={popularList}>
-        <h1>My Fav Movies</h1>
-        <p>Things you like the most</p>
-      </MovieList>
-      <MovieList movieList={topRatedList}>
-        <h3>Top Rated</h3>
-      </MovieList> */}
-      {movieDetail && (
-        <MovieDetail
-          cast={[
-            { id: 0, name: 'Clint Eastwood' },
-            { id: 1, name: 'Eli Wallach' },
-            { id: 2, name: 'Lee Van Cleef' },
-          ]}
-          genres={movieDetail.genres}
-          image={`https://image.tmdb.org/t/p/w500${movieDetail.backdrop_path}`}
-          match={movieDetail.vote_count}
-          releaseDate={movieDetail.release_date}
-          title={movieDetail.original_title}
-          overview={movieDetail.overview}
-        />
-      )}
-    </div>
-  )
+    <main className={styles.mainContainer}>
+      <HeroComponent
+        imageUrl={popularList[0]?.backdrop_path}
+        title={popularList[0]?.original_title}
+      />
+      <section className={styles.carouselSection}>
+        <Carousel list={popularList} />
+      </section>
+      <section className={styles.carouselSection}>
+        <Carousel list={topRatedList} />
+      </section>
+    </main>
+  );
 }
 
-export default App
+export default App;

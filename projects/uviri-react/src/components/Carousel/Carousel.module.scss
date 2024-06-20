@@ -1,0 +1,107 @@
+$background-color: #f0f0f0;
+$highlight-color: #007bff;
+$text-color: #333;
+
+.carousel {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 20px;
+  background-color: $background-color;
+  position: relative;
+
+  .carouselButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: $highlight-color;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+
+    &:hover {
+      background: darken($highlight-color, 10%);
+    }
+
+    &.left {
+      left: 10px;
+    }
+
+    &.right {
+      right: 10px;
+    }
+
+    .icon {
+      color: white;
+      font-size: 20px;
+    }
+  }
+
+  .carouselInner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      height: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $highlight-color;
+      border-radius: 5px;
+    }
+
+    .movieCard {
+      margin: 0 10px;
+      min-width: 200px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      .details {
+        padding: 10px;
+
+        h3 {
+          margin: 0;
+          font-size: 16px;
+          color: $text-color;
+        }
+
+        p {
+          margin: 5px 0 0;
+          font-size: 14px;
+          color: darken($text-color, 20%);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel {
+    padding: 10px;
+
+    .carouselButton {
+      padding: 5px;
+
+      .icon {
+        font-size: 16px;
+      }
+    }
+
+    .carouselInner {
+      .movieCard {
+        min-width: 150px;
+        margin: 0 5px;
+      }
+    }
+  }
+}

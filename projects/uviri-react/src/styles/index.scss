@@ -1,0 +1,7 @@
+@import './variables';
+
+body {
+  font-family: 'Arial, sans-serif';
+  background-color: $background-color;
+  color: $primary-color;
+}

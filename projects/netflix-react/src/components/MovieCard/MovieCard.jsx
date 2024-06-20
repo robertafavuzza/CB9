@@ -1,45 +1,34 @@
 /* eslint-disable react/prop-types */
-import './MovieCard.css'
-import { useState } from 'react'
+import { useState } from 'react';
+import styles from './moviecard.module.scss';
+import Modal from '../Modal/Modal';
 
-const MovieCard = ({
-  image,
-  match,
-  rating,
-  releaseDate,
-  isHD,
-  categories = [],
-}) => {
-  const [isActive, setIsActive] = useState(false)
+const MovieCard = ({ title = 'Movie Title', imgUrl, refProp, movie }) => {
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
-  const handleMouse = () => {
-    setIsActive(!isActive)
-  }
+  const handleCardClick = () => {
+    setIsModalVisible(true);
+  };
 
   return (
-    <div
-      onMouseEnter={handleMouse}
-      onMouseLeave={handleMouse}
-      className="movie-card"
-    >
-      <img src={image} alt={''} className="card-image" />
-      {/* conditional rendering */}
-      {isActive && (
-        <div className="card-info">
-          <section className="info">
-            <p>{match}</p>
-            <p>{rating}</p>
-            <p>{releaseDate}</p>
-          </section>
-          <section className="categories">
-            {categories.map((category, index) => (
-              <p key={index}>{category}</p>
-            ))}
-          </section>
-        </div>
+    <>
+      <div ref={refProp} className={styles.movieCard} onClick={handleCardClick}>
+        <img
+          src={`https://image.tmdb.org/t/p/w500${imgUrl}`}
+          alt="movie-card-img"
+        />
+        <p>{title}</p>
+      </div>
+      {isModalVisible && (
+        <Modal
+          handleCloseClick={() => {
+            setIsModalVisible(false);
+          }}
+          movie={movie}
+        />
       )}
-    </div>
-  )
-}
+    </>
+  );
+};
 
-export default MovieCard
+export default MovieCard;

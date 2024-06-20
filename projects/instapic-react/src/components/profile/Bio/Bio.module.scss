@@ -1,0 +1,13 @@
+@import 'src/assets/styles/variables';
+@import 'src/assets/styles/mixins';
+
+.bio {
+  padding: 10px;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  width: 100%;
+
+  p {
+    margin: 0;
+  }
+}

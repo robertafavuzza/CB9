@@ -1,0 +1,33 @@
+@use '../../assets/variables';
+
+.heroContainer {
+  position: relative;
+
+  h2 {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+    color: whitesmoke;
+    font-size: 1.8rem;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.552);
+  }
+
+  img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .heroBtn {
+    position: absolute;
+    bottom: 20%;
+    right: 10%;
+    background-color: white;
+    color: variables.$primary-color;
+    border: none;
+    padding: 8px;
+    box-shadow: 0 0 4px variables.$primary-color;
+  }
+}

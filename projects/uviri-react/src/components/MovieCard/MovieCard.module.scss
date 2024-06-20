@@ -1,0 +1,41 @@
+.movieCard {
+  position: relative;
+  width: 220px;
+  cursor: pointer;
+  margin: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  .movieDetails {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+
+    .movieTitle {
+      margin-bottom: 5px;
+    }
+
+    .movieRating {
+      font-size: 0.9rem;
+      color: #ffd700;
+    }
+  }
+}

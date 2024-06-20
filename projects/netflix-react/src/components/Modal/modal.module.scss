@@ -1,0 +1,73 @@
+@use '../../assets/mixins';
+
+.modalContainer {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+  background-color: rgba(0, 0, 0, 0.471);
+  backdrop-filter: blur(4px);
+
+  .modalWindow {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: whitesmoke;
+
+    @include mixins.desktop() {
+      border-radius: 12px;
+      overflow: hidden;
+      height: 600px;
+      width: 600px;
+    }
+
+    img {
+      height: 40%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .modalInfo {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 18px;
+      color: rgb(25, 25, 25);
+
+      h2 {
+        font-size: 2rem;
+        font-weight: 800;
+      }
+
+      .overview {
+        font-size: 1.2rem;
+      }
+    }
+
+    .closeButtonContainer {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 10px;
+      width: max-content;
+      color: whitesmoke;
+      font-size: 1.2rem;
+
+      .iconClose {
+        cursor: pointer;
+        transition: all 0.25s;
+
+        &:hover {
+          color: rgb(117, 66, 66);
+        }
+      }
+    }
+  }
+}

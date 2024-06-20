@@ -1,0 +1,16 @@
+.navbarContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.218);
+}
+
+.menuList {
+  display: flex;
+  gap: 8px;
+}
+
+.active {
+  background-color: lightblue;
+}

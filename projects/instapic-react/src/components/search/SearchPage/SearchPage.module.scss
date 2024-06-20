@@ -1,0 +1,50 @@
+.searchPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+  
+    form {
+      margin-bottom: 20px;
+  
+      input {
+        padding: 10px;
+        margin-right: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+  
+      button {
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  
+    .results {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 10px;
+      width: 100%;
+    }
+  
+    .imageWrapper {
+      position: relative;
+      padding-top: 177.78%; /* 9:16 aspect ratio */
+      cursor: pointer;
+  
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+    }
+  }
+  

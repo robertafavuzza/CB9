@@ -1,0 +1,26 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  .logo {
+    font-size: 24px;
+  }
+  .search {
+    padding: 5px;
+    font-size: 16px;
+  }
+  .navLinks {
+    display: flex;
+    list-style: none;
+    li {
+      margin: 0 10px;
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+}

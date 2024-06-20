@@ -1,0 +1,14 @@
+$background-color: #f0f0f0;
+
+.app {
+  background-color: $background-color;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.content {
+  flex: 1;
+  padding-bottom: 80px; /* Space for footer */
+}

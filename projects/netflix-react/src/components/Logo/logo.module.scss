@@ -1,0 +1,6 @@
+@use '../../assets/variables';
+
+.mainLogo {
+  fill: variables.$primary-color;
+  width: 80px;
+}
