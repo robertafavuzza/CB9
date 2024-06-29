@@ -1,0 +1,100 @@
+.todolistContainer {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .title {
+    font-size: 24px;
+    color: #343a40;
+    text-align: center;
+  
+    .highlight {
+      color: #ffcc00;
+    }
+  }
+  
+  .inputContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  
+    .input {
+      flex: 1;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+  
+    .addButton {
+      padding: 10px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #ffcc00;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s;
+  
+      &:hover {
+        background-color: #e0b200;
+      }
+    }
+  }
+  
+  .taskList {
+    list-style: none;
+    padding: 0;
+  
+    .taskItem {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      background-color: #fff;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      margin-bottom: 10px;
+  
+      &:hover {
+        background-color: #f1f1f1;
+      }
+  
+      .removeButton {
+        background: none;
+        border: none;
+        color: #dc3545;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: color 0.3s;
+  
+        &:hover {
+          color: #a71d2a;
+        }
+      }
+    }
+  }
+  
+  .linkButton {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 16px;
+  
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
