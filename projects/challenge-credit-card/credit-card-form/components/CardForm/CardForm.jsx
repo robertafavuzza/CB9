@@ -10,20 +10,21 @@ const CardForm = ({ onUpdate }) => {
   const [cvc, setCvc] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [thankYouMessage, setThankYouMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleInputChange = (setter, key) => (e) => {
     const value = e.target.value;
 
-    if (key === 'cardNumber' && !/^\d*$/.test(value)) {
-      return; // Blocca l'input se non è un numero
+    if (key === 'cardNumber' && (!/^\d*$/.test(value) || value.length > 16)) {
+      return;
     }
 
-    if (key === 'cardName' && /[^a-zA-Z\s]/.test(value)) {
-      return; // Blocca l'input se non è una lettera o uno spazio
+    if (key === 'cardName' && (/[^a-zA-Z\s]/.test(value) || value.length > 16)) {
+      return;
     }
 
     if ((key === 'expiryMonth' || key === 'expiryYear' || key === 'cvc') && !/^\d*$/.test(value)) {
-      return; // Blocca l'input se non è un numero
+      return;
     }
 
     setter(value);
@@ -31,7 +32,12 @@ const CardForm = ({ onUpdate }) => {
   };
 
   const handleConfirmClick = () => {
-    setShowModal(true);
+    if (cardNumber && cardName && expiryMonth && expiryYear && cvc) {
+      setShowModal(true);
+      setErrorMessage('');
+    } else {
+      setErrorMessage('Tutti i campi sono obbligatori.');
+    }
   };
 
   const handleCloseModal = () => {
@@ -52,6 +58,8 @@ const CardForm = ({ onUpdate }) => {
             type="text"
             value={cardName}
             onChange={handleInputChange(setCardName, 'cardName')}
+            maxLength="16"
+            required
           />
         </div>
         <div className={styles.formGroup}>
@@ -61,6 +69,7 @@ const CardForm = ({ onUpdate }) => {
             value={cardNumber}
             onChange={handleInputChange(setCardNumber, 'cardNumber')}
             maxLength="16"
+            required
           />
         </div>
         <div className={styles.formGroup}>
@@ -72,6 +81,7 @@ const CardForm = ({ onUpdate }) => {
               onChange={handleInputChange(setExpiryMonth, 'expiryMonth')}
               maxLength="2"
               placeholder="MM"
+              required
             />
             <input
               type="text"
@@ -79,6 +89,7 @@ const CardForm = ({ onUpdate }) => {
               onChange={handleInputChange(setExpiryYear, 'expiryYear')}
               maxLength="2"
               placeholder="YY"
+              required
             />
           </div>
         </div>
@@ -89,8 +100,10 @@ const CardForm = ({ onUpdate }) => {
             value={cvc}
             onChange={handleInputChange(setCvc, 'cvc')}
             maxLength="3"
+            required
           />
         </div>
+        {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
         <button type="button" className={styles.confirmButton} onClick={handleConfirmClick}>CONFIRM</button>
       </form>
       {thankYouMessage && <p className={styles.thankYouMessage}>{thankYouMessage}</p>}
