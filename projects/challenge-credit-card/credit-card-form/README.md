@@ -68,13 +68,13 @@ credit-card-form/
 ## 🖼️ Screenshot
 
 ### Form di Input
-![Form di Input](./screenshots/form-input.png)
+![Form di Input](./screenshot/form-input.png)
 
 ### Carta di Credito
-![Carta di Credito](./screenshots/credit-card.png)
+![Carta di Credito](./screenshot/credit-card.png)
 
 ### Modale di Conferma
-![Modale di Conferma](./screenshots/confirm-modal.png)
+![Modale di Conferma](./screenshot/confirm-modal.png)
 
 ## 📦 Installazione
 
@@ -85,19 +85,20 @@ credit-card-form/
 
 2. Naviga nella repository del progetto:
    ```bash
-cd credit-card-form
+  cd credit-card-form
 
 3. Installa le dipendenze:
-  ```bash
-npm install
+   ```bash
+ npm install
 
  4. Avvia l'applicazione:
   ```bash
- npm run dev
+  npm run dev
 
  5. Apri il browser e visita http://localhost:3000.
 
- 📝 Note
+
+📝 Note
 Assicurati di avere Node.js e npm installati sulla tua macchina.
 Il progetto utilizza Next.js 14.2.5, assicurati di utilizzare una versione compatibile di Node.js.
 
