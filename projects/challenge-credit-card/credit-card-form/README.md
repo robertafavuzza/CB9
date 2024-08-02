@@ -24,30 +24,6 @@ Questa applicazione è un form interattivo per l'inserimento dei dati di una car
   - Sfondo della carta e dello sfondo: `linear-gradient(to right, #4A00E0, #8E2DE2)`
   - Pulsante: `linear-gradient(to right, #4A00E0, #8E2DE2)`
 
-## 📂 Struttura delle Cartelle
-
-credit-card-form/
-├── app/
-│ ├── favicon.ico
-│ ├── globals.css
-│ ├── layout.js
-│ ├── page.js
-│ ├── page.module.css
-├── components/
-│ ├── CardForm/
-│ │ ├── CardForm.jsx
-│ │ └── cardform.module.scss
-│ ├── CreditCard/
-│ │ ├── CreditCard.jsx
-│ │ └── creditcard.module.scss
-│ ├── ConfirmModal/
-│ │ ├── ConfirmModal.jsx
-│ │ └── confirmmodal.module.scss
-├── styles/
-│ └── variables.scss
-├── public/
-│ └── logo.svg
-├── package.json
 
 
 ## 🛠️ Funzionalità
@@ -75,27 +51,6 @@ credit-card-form/
 
 ### Modale di Conferma
 ![Modale di Conferma](./screenshot/confirm-modal.png)
-
-## 📦 Installazione
-
-1. Clona il repository:
-   ```bash
-   git clone https://github.com/tuo-username/credit-card-form.git
-
-
-2. Naviga nella repository del progetto:
-   ```bash
-  cd credit-card-form
-
-3. Installa le dipendenze:
-   ```bash
- npm install
-
- 4. Avvia l'applicazione:
-  ```bash
-  npm run dev
-
- 5. Apri il browser e visita http://localhost:3000.
 
 
 📝 Note
