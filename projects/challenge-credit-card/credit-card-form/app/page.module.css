@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.left, .right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left {
+  background: linear-gradient(to right, #4A00E0, #8E2DE2);
+}
+
+.right {
+  background: #f7f7f7;
+}
